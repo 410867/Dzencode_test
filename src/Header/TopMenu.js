@@ -1,9 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 import '../css/topMenu.css';
 import logo from "../img/logo.png";
-import clock from "../img/clock.png";
 
 import { Link, } from 'react-router-dom';
+import Time from "../Components/Time";
 
 export default function TopMenu() {
     return (
@@ -16,11 +16,8 @@ export default function TopMenu() {
 
                 <div className="header_right">
                     <p className="text">Today</p>
-                    <div className="header_date">
-                        06 Апр, 2017
-                        {{/*new Date().toLocaleTimeString()*/}}
-                        <img className="clock" src={clock} alt=""/>
-                        17:20
+                    <div className="header_date" id="header_date">
+                        <Time />
                     </div>
                 </div>
             </header>

@@ -9,7 +9,7 @@ const Navbar = () => {
     return (
         <Nav>
             <NavMenu>
-                <NavLink to='/coming'>
+                <NavLink to='/coming' >
                     ПРИХОД
                 </NavLink>
                 <NavLink to='/groups'>
@@ -28,5 +28,6 @@ const Navbar = () => {
         </Nav>
     );
 };
+
 
 export default Navbar;

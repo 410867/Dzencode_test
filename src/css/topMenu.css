@@ -51,6 +51,7 @@
     margin: 0 160px 0 0;
     color: #36454d;
     font-weight: 200;
+    font-family: "Gill Sans", sans-serif;
 }
 
 .header_right .text {
@@ -60,6 +61,10 @@
 .header_right .header_date {
     display: flex;
     flex-direction: row;
+}
+
+.header_right .header_date .text_date {
+    margin: 0;
 }
 
 .header_right .header_date .clock {

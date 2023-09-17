@@ -1,9 +1,10 @@
 import React from 'react';
-import '../css/rightMenu.css';
+import '../css/leftMenu.css';
 import photo from "../img/photo.png";
 import imgSetting from "../img/img_setting.png";
 import {Link} from "react-router-dom";
 import Navbar from "../Components/Navbar";
+import App from "../App";
 
 export default function LeftMenu() {
     return (
@@ -20,3 +21,4 @@ export default function LeftMenu() {
         </div>
     );
 }
+

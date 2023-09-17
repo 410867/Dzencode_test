@@ -1,21 +1,14 @@
 import React, { Component } from "react";
 
-class Setting extends Component {
-    render() {
+const Setting = () => {
+    const body = document.querySelector('body');
+    body.style.background = "#f0f3f5";
 
-
-        return (
-            <main>
-                <p> Setting Setting Setting Setting Setting Setting Setting Setting Setting Setting Setting Setting
-                    Setting Setting Setting Setting Setting Setting Setting Setting Setting Setting Setting Setting
-                    Setting Setting Setting Setting Setting Setting Setting Setting Setting Setting Setting Setting
-                    Setting Setting Setting Setting Setting Setting Setting Setting Setting Setting Setting Setting
-                    Setting Setting Setting Setting Setting Setting Setting Setting Setting Setting Setting Setting
-
-                </p>
-            </main>
-        );
-    }
+    return (
+        <main>
+            <h1> Setting</h1>
+        </main>
+    );
 }
 
 export default Setting;
