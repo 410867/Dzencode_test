@@ -9,7 +9,7 @@ const Navbar = () => {
     return (
         <Nav>
             <NavMenu>
-                <NavLink to='/coming' >
+                <NavLink to='/orders' >
                     ПРИХОД
                 </NavLink>
                 <NavLink to='/groups'>

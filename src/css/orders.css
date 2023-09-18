@@ -1,18 +1,18 @@
-.block_coming {
+.block_orders {
     display: flex;
     flex-direction: column;
     gap: 60px;
     width: 64vw;
 }
 
-.block_coming .block_top {
+.block_orders .block_top {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 22px;
 }
 
-.block_coming .block_top .block_plus {
+.block_orders .block_top .block_plus {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,7 +24,7 @@
     cursor: pointer;
 }
 
-.block_coming .block_top .block_plus .plus {
+.block_orders .block_top .block_plus .plus {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,21 +37,21 @@
     font-weight: 600;
 }
 
-.block_coming .block_top h1 {
+.block_orders .block_top h1 {
     margin: 0;
     font-weight: 600;
     font-family: Arial, sans-serif;
     color: #2c3c44;
 }
 
-.block_coming .block_list {
+.block_orders .block_list {
     display: flex;
     flex-direction: column;
     gap: 12px;
     width: 100%;
 }
 
-.block_coming .block_list .block_item {
+.block_orders .block_list .block_item {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -65,23 +65,23 @@
     font-family: DejaVu Sans Mono, monospace;
 }
 
-.block_coming .block_list .block_item:hover {
+.block_orders .block_list .block_item:hover {
     box-shadow: 10px 15px 12px 6px rgba(0, 0, 0, 0.04);
 }
 
-.block_coming .block_list .block_item .name {
+.block_orders .block_list .block_item .name {
     margin: 0 0 0 0;
     border-bottom: 1px solid;
     font-size: 20px;
 }
 
-.block_coming .block_list .block_item .block_product {
+.block_orders .block_list .block_item .block_product {
     display: flex;
     flex-direction: row;
     gap: 20px;
 }
 
-.block_coming .block_list .block_item .block_product .block_img_link {
+.block_orders .block_list .block_item .block_product .block_img_link {
     width: 26px;
     height: 22px;
     padding: 10px 9px 10px 9px;
@@ -93,44 +93,44 @@
     border-radius: 50%;
 }
 
-.block_coming .block_list .block_item .block_product .block_img_link .img_link {
+.block_orders .block_list .block_item .block_product .block_img_link .img_link {
     border-radius: 50%;
 }
 
-.block_coming .block_list .block_item .block_product .block_text {
+.block_orders .block_list .block_item .block_product .block_text {
     display: flex;
     flex-direction: column;
     gap: 4px;
     font-size: 22px;
 }
 
-.block_coming .block_list .block_item .block_product .block_text .text {
+.block_orders .block_list .block_item .block_product .block_text .text {
     margin: 0 0 0 0;
     font-size: 14px;
     color: #90a4ae;
 }
 
-.block_coming .block_list .block_item .block_date {
+.block_orders .block_list .block_item .block_date {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 3px;
 }
 
-.block_coming .block_list .block_item .block_date .text_top_date {
+.block_orders .block_list .block_item .block_date .text_top_date {
     margin: 0 0 0 0;
     font-size: 14px;
     color: #90a4ae;
     word-spacing: -4px;
 }
 
-.block_coming .block_list .block_item .block_date .text_bottom_date {
+.block_orders .block_list .block_item .block_date .text_bottom_date {
     margin: 0 0 0 0;
     font-size: 15px;
     word-spacing: -4px;
 }
 
-.block_coming .block_list .block_item .block_price {
+.block_orders .block_list .block_item .block_price {
     width: 120px;
     display: flex;
     flex-direction: column;
@@ -138,20 +138,20 @@
     gap: 3px;
 }
 
-.block_coming .block_list .block_item .block_price .text_top_price {
+.block_orders .block_list .block_item .block_price .text_top_price {
     margin: 0 0 0 0;
     font-size: 14px;
     color: #90a4ae;
     word-spacing: -4px;
 }
 
-.block_coming .block_list .block_item .block_price .text_bottom_price {
+.block_orders .block_list .block_item .block_price .text_bottom_price {
     margin: 0 0 0 0;
     font-size: 15px;
     word-spacing: -4px;
 }
 
-.block_coming .block_list .block_item .button_delete {
+.block_orders .block_list .block_item .button_delete {
     margin: 0 1px;
     display: flex;
     justify-content: center;
@@ -163,12 +163,12 @@
     cursor: pointer;
 }
 
-.block_coming .block_list .block_item .button_delete:hover {
+.block_orders .block_list .block_item .button_delete:hover {
     margin: 0;
     border: 1px solid #d3dbdf;
 }
 
-.block_coming_modal {
+.block_orders_modal {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -183,28 +183,28 @@
 }
 
 @media all and (max-width: 1300px) {
-    .block_coming_modal {
+    .block_orders_modal {
         top: 15%;
         left: 15%;
     }
 }
 
-.block_coming_modal.activate {
+.block_orders_modal.activate {
     visibility: visible;
 }
 
-.block_coming_modal .block_text {
+.block_orders_modal .block_text {
     margin: 30px 0 40px 30px;
 }
 
-.block_coming_modal .block_text h2 {
+.block_orders_modal .block_text h2 {
     margin: 0;
     font-weight: 600;
     font-family: Arial, sans-serif;
     color: #2c3c44;
 }
 
-.block_coming_modal .block_information {
+.block_orders_modal .block_information {
     width: 100%;
     padding: 12px 0 12px 0;
     display: flex;
@@ -213,7 +213,7 @@
     border-top: 1px solid #f0f3f5;
 }
 
-.block_coming_modal .block_information .block_indication {
+.block_orders_modal .block_information .block_indication {
     margin: 0 30px 0 30px;
     width: 10px;
     height: 10px;
@@ -221,28 +221,28 @@
     background-color: #8bc34a;
 }
 
-.block_coming_modal .block_information img {
+.block_orders_modal .block_information img {
     margin: 0 70px 0 0;
     width: 44px;
     height: 33px;
     object-fit: cover;
 }
 
-.block_coming_modal .block_name {
+.block_orders_modal .block_name {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 5px;
 }
 
-.block_coming_modal .block_name .top_name {
+.block_orders_modal .block_name .top_name {
     margin: 0 0 0 0;
     border-bottom: 2px solid #d7d9da;
     color: #2c3c44;
     font-family: "Gill Sans", sans-serif;
 }
 
-.block_coming_modal .block_name .bottom_name {
+.block_orders_modal .block_name .bottom_name {
     margin: 0 0 0 0;
     border-bottom: 1px solid #e6eaec;
     color: #90a4ae;
@@ -251,7 +251,7 @@
     font-family: "Gill Sans", sans-serif;
 }
 
-.block_coming_modal .block_button {
+.block_orders_modal .block_button {
     background-color: #86bd47;
     width: 100%;
     height: 100%;
@@ -262,8 +262,8 @@
     gap: 30px;
 }
 
-.block_coming_modal .block_button .button_close,
-.block_coming_modal .block_button .button_delete {
+.block_orders_modal .block_button .button_close,
+.block_orders_modal .block_button .button_delete {
     padding: 0;
     border: 0;
     cursor: pointer;
@@ -273,12 +273,12 @@
     letter-spacing: 2px;
 }
 
-.block_coming_modal .block_button .button_close {
+.block_orders_modal .block_button .button_close {
     background-color: transparent;
     color: #ffffff;
 }
 
-.block_coming_modal .block_button .button_delete {
+.block_orders_modal .block_button .button_delete {
     margin: 0 40px 0 0;
     padding: 15px 30px;
     display: flex;
@@ -291,7 +291,7 @@
     box-shadow: 7px 7px 12px 6px rgba(0, 0, 0, 0.15);
 }
 
-.block_coming_modal .button_plus_close {
+.block_orders_modal .button_plus_close {
     width: 15px;
     height: 15px;
     padding: 21px;
