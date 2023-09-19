@@ -11,9 +11,10 @@ import Products from "./Pages/Products";
 import Users from "./Pages/Users";
 import axios from "axios";
 
-const REACT_APP_API_URL = process.env.REACT_APP_API_URL;
-const urlOrders = REACT_APP_API_URL + "/orders";
-const urlProducts = REACT_APP_API_URL + "/products";
+const API_URL = "http://178.128.194.150:8000";
+const urlOrders = API_URL + "/orders";
+const urlProducts = API_URL + "/products";
+console.log(urlOrders);
 
 class App extends Component {
     state = {
@@ -25,12 +26,14 @@ class App extends Component {
         axios.get(urlOrders)
             .then(res => {
                 const orders = res.data;
+                console.log(orders);
                 this.setState({ orders });
             });
 
         axios.get(urlProducts)
             .then(res => {
                 const products = res.data;
+                console.log(products);
                 this.setState({ products });
             });
     }
