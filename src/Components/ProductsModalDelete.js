@@ -9,11 +9,13 @@ const ProductsModalDelete = (props) => {
     const product = props.products.filter((item) => item.id === id);
     let name = "";
     let serialNumber;
+    let photoUrl;
 
     if(product.length !== 0) {
         product.forEach((item) => {
             name = item.title;
             serialNumber = item.serialNumber;
+            photoUrl = item.photo;
         })
     }
 
@@ -40,9 +42,8 @@ const ProductsModalDelete = (props) => {
             </div>
             <div className="block_information">
                 {renderingBlockDot()}
-                <img src={imgComputer} alt="" />
+                <img src={photoUrl} alt="" />
                 <div className="block_name">
-                                        {/*<p className="top_name">Gigabyte Technology X58-USB3 (Socket 1366) 6 X58-USB3</p>*/}
                     <p className="top_name">{name}</p>
                     <p className="bottom_name">{serialNumber}</p>
                 </div>

@@ -15,6 +15,7 @@ const API_URL = "http://178.128.194.150:8000";
 const urlOrders = API_URL + "/orders";
 const urlProducts = API_URL + "/products";
 console.log(urlOrders);
+console.log(urlProducts);
 
 class App extends Component {
     state = {
@@ -45,9 +46,9 @@ class App extends Component {
                 <LeftMenu/>
                 <Routes>
                     <Route path='/' exact element={<Home/>}/>
-                    <Route path='/orders' element={<Orders orders={this.state.orders}/>}/>
+                    <Route path='/orders' element={<Orders orders={this.state.orders} products={this.state.products}/>} />
                     <Route path='/groups' element={<Groups/>}/>
-                    <Route path='/products' element={<Products orders={this.state.orders} products={this.state.products}/>}/>
+                    <Route path='/products' element={<Products orders={this.state.orders} products={this.state.products} />} />
                     <Route path='/users' element={<Users/>}/>
                     <Route path='/setting' element={<Setting/>}/>
                 </Routes>

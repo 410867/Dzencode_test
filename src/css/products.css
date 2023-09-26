@@ -19,6 +19,61 @@
     color: #2c3c44;
 }
 
+.block_products .block_top .block_setting_lists {
+    display: flex;
+    flex-direction: row;
+    gap: 22px;
+}
+
+.block_products .block_top .block_setting_lists .block_products_type,
+.block_products .block_top .block_setting_lists .block_products_specification {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.block_products .block_top .block_setting_lists .block_products_type .text,
+.block_products .block_top .block_setting_lists .block_products_specification .text {
+    margin: 0 0 0 0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #90a4ae;
+}
+
+.block_products .block_top .block_setting_lists .block_products_type .btn_group,
+.block_products .block_top .block_setting_lists .block_products_specification .btn_group {
+    width: 320px;
+}
+
+.block_products .block_top .block_setting_lists .block_products_type .btn_group .dropdown,
+.block_products .block_top .block_setting_lists .block_products_specification .btn_group .dropdown {
+    width: 100%;
+}
+
+.block_products .block_top .block_setting_lists .block_products_type .btn_group .dropdown button.dropdown-toggle,
+.block_products .block_top .block_setting_lists .block_products_specification .btn_group .dropdown button.dropdown-toggle {
+    border: 1px solid #cfd8dc;
+}
+
+.block_products .block_top .block_setting_lists .block_products_type .btn_group .dropdown button,
+.block_products .block_top .block_setting_lists .block_products_specification .btn_group .dropdown button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+    background-color: #ffffff;
+    color: #2c3c44;
+}
+
+.block_products .block_top .block_setting_lists .block_products_type .btn_group .dropdown button::after,
+.block_products .block_top .block_setting_lists .block_products_specification .btn_group .dropdown button::after {
+    color: #90a4ae;
+}
+
 .block_products .block_list {
     display: flex;
     flex-direction: column;
@@ -230,7 +285,7 @@
     z-index: 1;
     visibility: hidden;
     width: 740px;
-    height: 270px;
+    height: 300px;
     background-color: #ffffff;
     border-radius: 5px;
 }
@@ -255,6 +310,7 @@
     font-weight: 600;
     font-family: Arial, sans-serif;
     color: #2c3c44;
+    font-size: 28px;
 }
 
 .block_products_modal .block_information {

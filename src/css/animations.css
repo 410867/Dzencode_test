@@ -1,0 +1,8 @@
+.block_orders {
+    transition: width 1.5s;
+}
+
+.block_orders.activate {
+    padding: 0 38px 0 0;
+    width: 400px;
+}

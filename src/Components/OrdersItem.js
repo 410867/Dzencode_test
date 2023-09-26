@@ -1,6 +1,5 @@
 import React from 'react';
 import '../css/orders.css';
-import {Link} from "react-router-dom";
 import imgProduct from "../img/img_product.png";
 import imgDelete from "../img/img_delete.png";
 import MonthNameDisplay from "./MonthNameDisplay";
@@ -15,15 +14,10 @@ const OrdersItem = (props) => {
         blockOrdersModal.classList.add('activate');
 
         props.setId(item.id);
-
     }
 
     function findingNumberProducts(order) {
         return order.products.filter((item) => item.order === order.id).length;
-    }
-
-    function productsInOrder(order) {
-        return order.products.filter((item) => item.order === order.id);
     }
 
     function outputDate(order) {
@@ -53,6 +47,10 @@ const OrdersItem = (props) => {
         );
     }
 
+    function productsInOrder(order) {
+        return order.products.filter((item) => item.order === order.id);
+    }
+
     function outputPrice(order) {
         const products = productsInOrder(order);
         let topPrice = 0;
@@ -78,22 +76,25 @@ const OrdersItem = (props) => {
         );
     }
 
-    const listItems = props.orders.map((item) =>
+    const listItems = props.orders.map((item, count) =>
         <div className="block_item">
-            <p className="name">{item.title}</p>
-            <div className="block_product">
-                <Link className="img_link" to="">
-                    <div className="block_img_link"><img src={imgProduct} alt=""/></div>
-                </Link>
-                <div className="block_text">{findingNumberProducts(item)} <p className="text">Продукта</p></div>
-            </div>
-            <div className="block_date">{outputDate(item)}</div>
-            <div className="block_price">
-                {outputPrice(item)}
-            </div>
-            <div className="block_delete">
-                <Button primary className="button_delete" onClick={() => deleteItem(item)}><img src={imgDelete} alt="delete"/></Button>
-            </div>
+            <section>
+                <p className="name">{item.title}</p>
+                <div className="block_product">
+                    <Button className="img_button" onClick={() => props.renderProducts(count, item.id)}>
+                        <img src={imgProduct} alt=""/>
+                    </Button>
+                    <div className="block_text">{findingNumberProducts(item)} <p className="text">Продукта</p></div>
+                </div>
+                <div className="block_date">{outputDate(item)}</div>
+                <div className="block_price">
+                    {outputPrice(item)}
+                </div>
+                <div className="block_delete">
+                    <Button primary className="button_delete" onClick={() => deleteItem(item)}><img src={imgDelete} alt="delete"/></Button>
+                </div>
+            </section>
+            <div className="block_arrow hide" ><p>></p></div>
         </div>
     );
 
