@@ -225,9 +225,12 @@
     word-spacing: -4px;
 }
 
-.block_products .block_list .block_item .block_title_group,
-.block_products .block_list .block_item .block_title_orders {
+.block_products .block_list .block_item .block_title_group {
     width: 280px;
+}
+
+.block_products .block_list .block_item .block_title_orders {
+    width: 180px;
 }
 
 .block_products .block_list .block_item .block_title_group .title_group_text,

@@ -5,34 +5,24 @@ import {Button} from "react-bootstrap";
 import {renderingBlockDot, renderingTextState} from "../js/functionsForProductRendering";
 
 const OrderItem_ListProducts = (props) => {
+    const setBlockOrders_nameClass = props.setBlockOrders_nameClass;
+    const setListProducts_nameClass = props.setListProducts_nameClass;
+    const setTitle_nameClass = props.setTitle_nameClass;
+    const setBlockPrice_nameClass = props.setBlockPrice_nameClass;
+    const setBlockDelete_nameClass = props.setBlockDelete_nameClass;
+    const setCountId = props.setCountId;
     const order = props.orders.filter((item) => item.id === props.orderId);
     const products = props.products.filter((item) => item.order === props.orderId);
 
     function deleteItem(item) {}
 
     function closeListProducts() {
-        const blockOrders = document.querySelector('.block_orders');
-        const listProducts = document.querySelector('.list_products');
-        const title = document.querySelectorAll('.block_item .name');
-        const blockPrice = document.querySelectorAll('.block_item .block_price');
-        const blockDelete = document.querySelectorAll('.block_item .block_delete');
-        const blockProducts = document.querySelectorAll('.block_item .block_arrow');
-
-        blockOrders.classList.remove('activate');
-        listProducts.classList.add('hide');
-
-        title.forEach((item) => {
-            item.classList.remove('hide');
-        });
-        blockPrice.forEach((item) => {
-            item.classList.remove('hide');
-        });
-        blockDelete.forEach((item) => {
-            item.classList.remove('hide');
-        });
-        blockProducts.forEach((item) => {
-            item.classList.add('hide');
-        });
+        setBlockOrders_nameClass('');
+        setListProducts_nameClass('hide');
+        setTitle_nameClass('');
+        setBlockPrice_nameClass('');
+        setBlockDelete_nameClass('');
+        setCountId(null);
     }
 
     function renderListProducts() {
@@ -47,7 +37,9 @@ const OrderItem_ListProducts = (props) => {
                     </div>
                     {renderingTextState(item)}
                     <div className="block_delete">
-                        <Button primary className="button_delete" onClick={() => deleteItem(item)}><img src={imgDelete} alt="delete"/></Button>
+                        <Button primary className="button_delete" onClick={() => deleteItem(item)}>
+                            <img src={imgDelete} alt="delete"/>
+                        </Button>
                     </div>
                 </div>
             );

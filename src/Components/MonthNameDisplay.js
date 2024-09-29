@@ -1,39 +1,39 @@
 const MonthNameDisplay = (props) => {
     function monthNameDisplay(month) {
-        if(month === 0) {
+        if(month === 1) {
             return "Янв";
         }
-        if(month === 1) {
+        if(month === 2) {
             return "Фев";
         }
-        if(month === 2) {
+        if(month === 3) {
             return "Мар";
         }
-        if(month === 3) {
+        if(month === 4) {
             return "Апр";
         }
-        if(month === 4) {
+        if(month === 5) {
             return "Май";
         }
-        if(month === 5) {
+        if(month === 6) {
             return "Июн";
         }
-        if(month === 6) {
+        if(month === 7) {
             return "Июл";
         }
-        if(month === 7) {
+        if(month === 8) {
             return "Авг";
         }
-        if(month === 8) {
+        if(month === 9) {
             return "Сен";
         }
-        if(month === 9) {
+        if(month === 10) {
             return "Окт";
         }
-        if(month === 10) {
+        if(month === 11) {
             return "Ноя";
         }
-        if(month === 11) {
+        if(month === 12) {
             return "Дек";
         }
     }

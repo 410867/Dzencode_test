@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import '../css/products.css';
 import ProductsItem from "../Components/ProductsItem";
-import modalCloseProducts from "../js/modalCloseProducts";
 import ProductsModalDelete from "../Components/ProductsModalDelete";
 import TypeDropdownComponent from "../Components/TypeDropdownComponent";
 import SpecificationDropdownComponent from "../Components/SpecificationDropdownComponent";
@@ -11,6 +10,7 @@ const Products = (props) => {
     const [numberOfProducts, setNumberOfProducts] = useState(0);
     const [typeProduct, setTypeProduct] = useState('');
     const [specificationProduct, setSpecificationProduct] = useState('');
+    const [activate, setActivate] = useState('');
     const products = props.products;
     const body = document.querySelector('body');
 
@@ -54,12 +54,13 @@ const Products = (props) => {
                             setNumberOfProducts={setNumberOfProducts}
                             typeProduct={typeProduct}
                             specificationProduct={specificationProduct}
+                            setActivate={setActivate}
                         />
                     </div>
                 </div>
-                <ProductsModalDelete products={products} id={id}/>
+                <ProductsModalDelete products={products} id={id} activate={activate} setActivate={setActivate}/>
             </main>
-            <div className="block_modal_shadow" onClick={modalCloseProducts}></div>
+            <div className={"block_modal_shadow " + activate} onClick={() => {setActivate("");}}></div>
         </>
     );
 };

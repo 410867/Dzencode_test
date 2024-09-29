@@ -3,13 +3,18 @@ import '../css/orders.css';
 import '../css/animations.css';
 import OrdersItem from "../Components/OrdersItem";
 import OrdersModalDelete from "../Components/OrdersModalDelete";
-import modalCloseOrders from "../js/modalCloseOrders";
 import OrderItem_ListProducts from "../Components/OrderItem_ListProducts";
 
 const Orders = (props) => {
     const [id, setId] = useState('');
     const [orderId, setOrderId] = useState(0);
-
+    const [activate, setActivate] = useState('');
+    const [blockOrders_nameClass, setBlockOrders_nameClass] = useState('');
+    const [listProducts_nameClass, setListProducts_nameClass] = useState('hide');
+    const [title_nameClass, setTitle_nameClass] = useState('');
+    const [blockPrice_nameClass, setBlockPrice_nameClass] = useState('');
+    const [blockDelete_nameClass, setBlockDelete_nameClass] = useState('');
+    const [countId, setCountId] = useState();
     const orders = props.orders;
     const products = props.products;
     const body = document.querySelector('body');
@@ -20,39 +25,18 @@ const Orders = (props) => {
     }
 
     function renderProducts(countItem, orderId) {
-        const blockOrders = document.querySelector('.block_orders');
-        const listProducts = document.querySelector('.list_products');
-        const title = document.querySelectorAll('.block_item .name');
-        const blockPrice = document.querySelectorAll('.block_item .block_price');
-        const blockDelete = document.querySelectorAll('.block_item .block_delete');
-        const blockProducts = document.querySelectorAll('.block_item .block_arrow');
-
         setOrderId(orderId);
-        blockOrders.classList.add('activate');
-        listProducts.classList.remove('hide');
-
-        title.forEach((item) => {
-            item.classList.add('hide');
-        });
-        blockPrice.forEach((item) => {
-            item.classList.add('hide');
-        });
-        blockDelete.forEach((item) => {
-            item.classList.add('hide');
-        });
-        blockProducts.forEach((item, count) => {
-            item.classList.add('hide');
-            if(count === countItem) {
-                item.classList.remove('hide');
-            }
-        });
-
+        setBlockOrders_nameClass('activate');
+        setListProducts_nameClass('');
+        setTitle_nameClass('hide');
+        setBlockPrice_nameClass('hide');
+        setBlockDelete_nameClass('hide');
     }
 
     return (
         <>
             <main className="main_orders">
-                <div className="block_orders" data-aos="clipRight">
+                <div className={"block_orders " + blockOrders_nameClass} data-aos="clipRight">
                     <div className="block_top">
                         <div className="block_plus" onClick={addingOrders}>
                             <div className="plus">+</div>
@@ -61,17 +45,37 @@ const Orders = (props) => {
                     </div>
 
                     <div className="block_list">
-                        <OrdersItem orders={orders} setId={setId}  renderProducts={renderProducts}/>
+                        <OrdersItem
+                            orders={orders}
+                            setId={setId}
+                            renderProducts={renderProducts}
+                            setActivate={setActivate}
+                            title_nameClass={title_nameClass}
+                            blockPrice_nameClass={blockPrice_nameClass}
+                            blockDelete_nameClass={blockDelete_nameClass}
+                            countId={countId}
+                            setCountId={setCountId}
+                        />
                     </div>
                 </div>
 
-                <section className="list_products hide">
-                    <OrderItem_ListProducts orders={orders} products={products} orderId={orderId}/>
+                <section className={"list_products " + listProducts_nameClass}>
+                    <OrderItem_ListProducts
+                        orders={orders}
+                        products={products}
+                        orderId={orderId}
+                        setBlockOrders_nameClass={setBlockOrders_nameClass}
+                        setListProducts_nameClass={setListProducts_nameClass}
+                        setTitle_nameClass={setTitle_nameClass}
+                        setBlockPrice_nameClass={setBlockPrice_nameClass}
+                        setBlockDelete_nameClass={setBlockDelete_nameClass}
+                        setCountId={setCountId}
+                    />
                 </section>
 
-                <OrdersModalDelete orders={orders} id={id} />
+                <OrdersModalDelete orders={orders} id={id} setActivate={setActivate} activate={activate} />
             </main>
-            <div className="block_modal_shadow" onClick={modalCloseOrders}></div>
+            <div className={"block_modal_shadow " + activate} onClick={() => {setActivate("");}}></div>
         </>
     );
 }

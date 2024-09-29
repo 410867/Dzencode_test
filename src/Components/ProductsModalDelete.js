@@ -2,9 +2,10 @@ import React from 'react';
 import {Button} from "react-bootstrap";
 import imgComputer from "../img/img_computer.png";
 import imgRedDelete from "../img/img_red_delete.png";
-import modalCloseProducts from "../js/modalCloseProducts";
 
 const ProductsModalDelete = (props) => {
+    const activate = props.activate;
+    const setActivate = props.setActivate;
     const id = props.id;
     const product = props.products.filter((item) => item.id === id);
     let name = "";
@@ -35,8 +36,12 @@ const ProductsModalDelete = (props) => {
         return  <div className={className}></div>
     }
 
+    const modalCloseProducts = () => {
+        setActivate("");
+    }
+
     return (
-        <div className="block_products_modal">
+        <div className={"block_products_modal " + activate}>
             <div className="block_text">
                 <h2>Вы уверены, что хотите удалить этот продукт?</h2>
             </div>

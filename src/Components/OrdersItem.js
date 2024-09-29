@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../css/orders.css';
 import imgProduct from "../img/img_product.png";
 import imgDelete from "../img/img_delete.png";
@@ -6,13 +6,16 @@ import MonthNameDisplay from "./MonthNameDisplay";
 import {Button} from "react-bootstrap";
 
 const OrdersItem = (props) => {
+    const setActivate = props.setActivate;
+    const title_nameClass = props.title_nameClass;
+    const blockPrice_nameClass = props.blockPrice_nameClass;
+    const blockDelete_nameClass = props.blockDelete_nameClass;
+    const renderProducts = props.renderProducts;
+    const countId = props.countId;
+    const setCountId = props.setCountId;
+
     function deleteItem(item) {
-        const blockModalShadow = document.querySelector('.block_modal_shadow');
-        const blockOrdersModal = document.querySelector('.block_orders_modal');
-
-        blockModalShadow.classList.add('activate');
-        blockOrdersModal.classList.add('activate');
-
+        setActivate("activate");
         props.setId(item.id);
     }
 
@@ -77,24 +80,26 @@ const OrdersItem = (props) => {
     }
 
     const listItems = props.orders.map((item, count) =>
-        <div className="block_item">
+        <div className="block_item" key={count}>
             <section>
-                <p className="name">{item.title}</p>
+                <p className={"name " + title_nameClass}>{item.title}</p>
                 <div className="block_product">
-                    <Button className="img_button" onClick={() => props.renderProducts(count, item.id)}>
+                    <Button className="img_button" onClick={() => {renderProducts(count, item.id); setCountId(count)}}>
                         <img src={imgProduct} alt=""/>
                     </Button>
                     <div className="block_text">{findingNumberProducts(item)} <p className="text">Продукта</p></div>
                 </div>
                 <div className="block_date">{outputDate(item)}</div>
-                <div className="block_price">
+                <div className={"block_price " + blockPrice_nameClass}>
                     {outputPrice(item)}
                 </div>
-                <div className="block_delete">
-                    <Button primary className="button_delete" onClick={() => deleteItem(item)}><img src={imgDelete} alt="delete"/></Button>
+                <div className={"block_delete " + blockDelete_nameClass}>
+                    <Button primary className="button_delete" onClick={() => deleteItem(item)}>
+                        <img src={imgDelete} alt="delete"/>
+                    </Button>
                 </div>
             </section>
-            <div className="block_arrow hide" ><p>></p></div>
+            <div className={`block_arrow ${count === countId ? "" : "hide"}`}><p>></p></div>
         </div>
     );
 

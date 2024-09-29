@@ -18,16 +18,13 @@ const ProductsItem = (props) => {
     const typeProduct = props.typeProduct;
     const specificationProduct = props.specificationProduct;
     const setNumberOfProducts = props.setNumberOfProducts;
+    const setActivate = props.setActivate;
+    const activate = props.activate;
 
     setNumberOfProducts(products.length);
 
     function deleteItem(item) {
-        const blockModalShadow = document.querySelector('.block_modal_shadow');
-        const blockProductsModal = document.querySelector('.block_products_modal');
-
-        blockModalShadow.classList.add('activate');
-        blockProductsModal.classList.add('activate');
-
+        setActivate("activate");
         props.setId(item.id);
     }
 
